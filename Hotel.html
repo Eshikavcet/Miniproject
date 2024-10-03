@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOTEL</title>
+    <link rel="stylesheet" href="hotel.css">
+    <script>
+
+        function validateForm()
+        {
+            var flag = false;
+
+            if (document.frm.hotellocation.value == "none")
+            {
+                alert("Select Location!");
+                
+            }
+            else if (document.frm.hotelrating.value == "none")
+            {
+                alert("Select Rating!");
+            }
+            else if (document.frm.hotelprice.value == "none")
+            {
+                alert("Select Price Range!");
+            }
+            else
+            {
+                 flag = true;
+            }
+            
+
+            return flag;
+            }
+
+  
+            
+    </script>
+
+</head>
+<body>
+    <nav class="navbar ">
+        <ul class="nav-list">
+            <li><h1 class="logoname" >INNSIGHTFUL</h1></li>
+        </ul>
+
+    </nav>
+<br/>
+
+    <section class="background firstSection">
+
+    <div class="box">
+        <form name="frm" action="code\DisplayHotels.asp" onsubmit="return validateForm()" method="POST">
+            <!-- action="code\RegisterUser.asp"  -->
+            <table border = "1">
+            <tr>
+                <td align="left">Q1. WHICH LOCATION ARE YOU INTERESTED IN?</td>
+                <td>        
+                    <select name="hotellocation" id="hotellocation"  style="width: 250px;">
+                    <option value="none" selected align="center">--Select Any--</option>
+                    <option value="Andheri">Andheri</option>
+                    <option value="Bandra">Bandra</option>
+                    <option value="Borivali">Borivali</option>    
+                    <option value="Colaba">Colaba</option>
+                    <option value="Goregaon">Goregaon</option>
+                    <option value="Juhu">Juhu</option>
+                    <option value="Malad">Malad</option>
+                    <option value="Mira Road">Mira Road</option>
+                    <option value="Nariman Point">Nariman Point</option>
+                    <option value="Vasai">Vasai</option>
+                    <option value="Vile Parle">Vile Parle</option>
+
+                    
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">Q2. WHAT TYPE OF HOTEL ARE YOU LOOKING FOR?</td>
+                <td>
+                    <select name="hotelrating" id="hotelrating"  style="width: 250px;">
+                        <option value="none" selected align="center">--Select Any--</option>
+                        <option value="3-star">3-star</option>
+                        <option value="4-star">4-star</option>
+                        <option value="5-star">5-star</option>
+                    </select>
+                </td>
+            </tr>
+            <tr></tr>
+                <td align="left">Q3. WHAT IS YOUR BUDGET RANGE PER NIGHT?</td>
+                <td>
+                    <select name="hotelprice" id="hotelprice"  style="width: 250px;">
+                        <option value="none" selected align="center">--Select Any--</option>
+                        <option value="1000 - 5000">Rs 1000 - Rs 5000</option>
+                        <option value="5000 - 10000">Rs 5000 - Rs 10000</option>
+                        <option value="10000 - 15000">Rs 10000 - Rs 15000</option>
+                        <option value="15000 above">Rs 15000 above</option>
+                    </select>
+                </td>
+            </tr>   
+            </table>         
+            <!-- <button class="box3" onclick="validateForm()">Search</button> -->
+            <input type="submit" value="Search" class="box3">
+  
+        </form>
+    </div>
+
+    <div id="HOTELS"></div>
+</section>
+</body>
+</html>
